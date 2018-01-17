@@ -7,7 +7,7 @@ run the application using the command npm start
 
 # test
 
-> run npm start
+>run npm start
 
 >run npm test
 
