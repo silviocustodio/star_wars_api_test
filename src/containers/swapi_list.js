@@ -4,7 +4,7 @@ var request = require('superagent');
 import ReactGiphy from  'react-giphy';
 
 
-class StarWarApiList extends Component {
+class SwapiList extends Component {
     renderSwapi(swapiData) {
         const name = swapiData.name;
         const birth_year = swapiData.birth_year;
@@ -30,7 +30,7 @@ class StarWarApiList extends Component {
             <table className="table table-hover">
                 <thead>
                 <tr>
-                    <th>Results</th>
+                    <th>Check the Results below</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,4 +47,4 @@ function mapStateToProps({ swapi }) {
 
 }
 
-export default connect(mapStateToProps)(StarWarApiList);
+export default connect(mapStateToProps)(SwapiList);

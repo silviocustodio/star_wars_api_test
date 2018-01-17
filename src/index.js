@@ -1,17 +1,16 @@
-import axios from 'axios';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxPromise from 'redux-promise';
 
-const ROOT_URL = 'https://swapi.co/api/people/';
+import App from './components/app';
+import reducers from './reducers';
 
-export const FETCH_SWAPI = 'FETCH_SWAPI';
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
-export function fetchSwapi(name) {
-    const url = `${ROOT_URL}?search=${name}`;
-    const request = axios.get(url);
-
-    console.log('Request:', request);
-
-    return {
-        type: FETCH_SWAPI,
-        payload: request
-    };
-}
+ReactDOM.render(
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <App />
+    </Provider>
+    , document.querySelector('.container'));

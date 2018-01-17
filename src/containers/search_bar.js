@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchSwapi } from '../dist/index';
+import { fetchSwapi } from '../actions/index';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
-import FlatButton from 'material-ui/FlatButton';
+import IconButton from 'material-ui/IconButton';
 
 
 class SearchBar extends Component {
@@ -34,13 +33,19 @@ class SearchBar extends Component {
         return (
             <form onSubmit={this.onFormSubmit} className="input-group">
                 <TextField
-                    hintText="Type in character name"
+                    hintText="Type a name"
                     value={this.state.term}
                     onChange={this.onInputChange} />
                 <span className="input-group-btn">
-           <RaisedButton
-               label="Search" default={true} type="submit">
-           </RaisedButton>
+
+
+               <RaisedButton
+                    label="Search"
+                    default={true}
+                    type="submit">
+               </RaisedButton>
+
+
         </span>
             </form>
         );
