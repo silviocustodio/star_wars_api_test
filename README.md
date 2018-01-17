@@ -7,8 +7,8 @@ run the application using the command npm start
 
 # test
 
-npm start
-npm test
+>npm start
+>npm test
 
 # react-giphy
 
