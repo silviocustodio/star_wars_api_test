@@ -3,6 +3,6 @@ bundle.js
 .DS_Store
 npm-debug.log
 
-# IntelliJ
+# PHPStorm
 *.iml
 /.idea
